@@ -4,7 +4,7 @@
     "layout": "Revenue Growth Dashboard",
     "description": "Monitors month-over-month changes in company revenue.",
     "kpisUsed": ["revenue_growth"],
-    "lastUpdated": "2025-08-19T09:00:00.000Z",
+    "lastUpdated": "2025-08-20T09:00:00.000Z",
     "users": 1200,
     "type": "Finance",
     "businessQuestions": [
@@ -37,7 +37,7 @@
     "layout": "Average Order Value Dashboard",
     "description": "Tracks average spend per order to evaluate customer purchasing behavior.",
     "kpisUsed": ["average_order_value"],
-    "lastUpdated": "2025-08-19T09:10:00.000Z",
+    "lastUpdated": "2025-08-20T09:10:00.000Z",
     "users": 980,
     "type": "Sales",
     "businessQuestions": [
@@ -70,7 +70,7 @@
     "layout": "Customer Lifetime Value Dashboard",
     "description": "Analyzes the long-term revenue potential of customers.",
     "kpisUsed": ["customer_lifetime_value"],
-    "lastUpdated": "2025-08-19T09:20:00.000Z",
+    "lastUpdated": "2025-08-20T09:20:00.000Z",
     "users": 860,
     "type": "Customer Success",
     "businessQuestions": [
@@ -103,7 +103,7 @@
     "layout": "User Retention Dashboard",
     "description": "Tracks how effectively the company retains its users over time.",
     "kpisUsed": ["user_retention"],
-    "lastUpdated": "2025-08-19T09:30:00.000Z",
+    "lastUpdated": "2025-08-20T09:30:00.000Z",
     "users": 1450,
     "type": "Engagement",
     "businessQuestions": [
@@ -136,7 +136,7 @@
     "layout": "Customer Satisfaction Dashboard",
     "description": "Measures customer satisfaction levels from surveys.",
     "kpisUsed": ["customer_satisfaction_score"],
-    "lastUpdated": "2025-08-19T09:40:00.000Z",
+    "lastUpdated": "2025-08-20T09:40:00.000Z",
     "users": 1120,
     "type": "Customer Success",
     "businessQuestions": [
@@ -169,7 +169,7 @@
     "layout": "Net Promoter Score Dashboard",
     "description": "Tracks how likely customers are to recommend the company.",
     "kpisUsed": ["net_promoter_score"],
-    "lastUpdated": "2025-08-19T09:50:00.000Z",
+    "lastUpdated": "2025-08-20T09:50:00.000Z",
     "users": 1010,
     "type": "Customer Advocacy",
     "businessQuestions": [

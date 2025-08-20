@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import KPIModal from "../kpis/KPIModal";
 import KPIBuilder, { KPI } from "../kpis/KPIBuilder";
 import LayoutBuilder, { Layout } from "../layouts/LayoutBuilder";
 
@@ -18,9 +17,6 @@ const FeaturesBuilder = ({
   kpis: KPI[];
   layouts: Layout[];
 }) => {
-  console.log(features);
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div>
       <h1 className="text-2xl font-bold">Featured KPIS</h1>
