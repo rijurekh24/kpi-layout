@@ -1,0 +1,200 @@
+[
+  {
+    "id": "revenue_growth_dashboard",
+    "layout": "Revenue Growth Dashboard",
+    "description": "Monitors month-over-month changes in company revenue.",
+    "kpisUsed": ["revenue_growth"],
+    "lastUpdated": "2025-08-19T09:00:00.000Z",
+    "users": 1200,
+    "type": "Finance",
+    "businessQuestions": [
+      {
+        "question": "How fast is revenue growing?",
+        "description": "Identify month-over-month growth trends."
+      },
+      {
+        "question": "Are there periods of slowdown?",
+        "description": "Spot declining revenue growth months."
+      }
+    ],
+    "pages": [
+      {
+        "title": "Revenue Trends",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "revenue_growth",
+            "columns": 12,
+            "title": "Revenue Growth",
+            "additionalText": "Track revenue fluctuations over time."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "average_order_value_dashboard",
+    "layout": "Average Order Value Dashboard",
+    "description": "Tracks average spend per order to evaluate customer purchasing behavior.",
+    "kpisUsed": ["average_order_value"],
+    "lastUpdated": "2025-08-19T09:10:00.000Z",
+    "users": 980,
+    "type": "Sales",
+    "businessQuestions": [
+      {
+        "question": "What is the average customer spend?",
+        "description": "Monitor per-transaction revenue levels."
+      },
+      {
+        "question": "Is AOV increasing over time?",
+        "description": "Track if upselling and bundling efforts are effective."
+      }
+    ],
+    "pages": [
+      {
+        "title": "Order Value Insights",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "average_order_value",
+            "columns": 12,
+            "title": "Average Order Value",
+            "additionalText": "Analyze changes in customer spend."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "customer_lifetime_value_dashboard",
+    "layout": "Customer Lifetime Value Dashboard",
+    "description": "Analyzes the long-term revenue potential of customers.",
+    "kpisUsed": ["customer_lifetime_value"],
+    "lastUpdated": "2025-08-19T09:20:00.000Z",
+    "users": 860,
+    "type": "Customer Success",
+    "businessQuestions": [
+      {
+        "question": "What is the average customer lifetime value?",
+        "description": "Evaluate profitability of customer relationships."
+      },
+      {
+        "question": "Are CLV levels improving?",
+        "description": "Track if retention and upselling increase customer value."
+      }
+    ],
+    "pages": [
+      {
+        "title": "Customer Value Metrics",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "customer_lifetime_value",
+            "columns": 12,
+            "title": "Customer Lifetime Value",
+            "additionalText": "Long-term revenue from customers."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "user_retention_dashboard",
+    "layout": "User Retention Dashboard",
+    "description": "Tracks how effectively the company retains its users over time.",
+    "kpisUsed": ["user_retention"],
+    "lastUpdated": "2025-08-19T09:30:00.000Z",
+    "users": 1450,
+    "type": "Engagement",
+    "businessQuestions": [
+      {
+        "question": "Are we retaining users effectively?",
+        "description": "Measure loyalty and repeat usage."
+      },
+      {
+        "question": "Which cohorts retain better?",
+        "description": "Compare retention by signup date or channel."
+      }
+    ],
+    "pages": [
+      {
+        "title": "Retention Insights",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "user_retention",
+            "columns": 12,
+            "title": "User Retention",
+            "additionalText": "Retention rates across cohorts."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "customer_satisfaction_score_dashboard",
+    "layout": "Customer Satisfaction Dashboard",
+    "description": "Measures customer satisfaction levels from surveys.",
+    "kpisUsed": ["customer_satisfaction_score"],
+    "lastUpdated": "2025-08-19T09:40:00.000Z",
+    "users": 1120,
+    "type": "Customer Success",
+    "businessQuestions": [
+      {
+        "question": "How satisfied are customers?",
+        "description": "Track CSAT survey results over time."
+      },
+      {
+        "question": "Which areas drive satisfaction?",
+        "description": "Identify features or services influencing scores."
+      }
+    ],
+    "pages": [
+      {
+        "title": "Satisfaction Trends",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "customer_satisfaction_score",
+            "columns": 12,
+            "title": "Customer Satisfaction",
+            "additionalText": "Survey-based satisfaction tracking."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "net_promoter_score_dashboard",
+    "layout": "Net Promoter Score Dashboard",
+    "description": "Tracks how likely customers are to recommend the company.",
+    "kpisUsed": ["net_promoter_score"],
+    "lastUpdated": "2025-08-19T09:50:00.000Z",
+    "users": 1010,
+    "type": "Customer Advocacy",
+    "businessQuestions": [
+      {
+        "question": "Do customers recommend us?",
+        "description": "Track likelihood of customer referrals."
+      },
+      {
+        "question": "Is NPS improving?",
+        "description": "Spot changes in promoter vs detractor balance."
+      }
+    ],
+    "pages": [
+      {
+        "title": "NPS Insights",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "net_promoter_score",
+            "columns": 12,
+            "title": "Net Promoter Score",
+            "additionalText": "Likelihood of customer recommendations."
+          }
+        ]
+      }
+    ]
+  }
+]

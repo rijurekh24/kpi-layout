@@ -1,0 +1,14 @@
+{
+  "kpis": [
+    "deployment_failure_rate",
+    "customer_support_tickets",
+    "gross_margin",
+    "server_uptime"
+  ],
+
+  "layout": [
+    "net_promoter_score_dashboard",
+    "customer_lifetime_value_dashboard",
+    "average_order_value_dashboard"
+  ]
+}

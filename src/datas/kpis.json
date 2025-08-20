@@ -1,0 +1,437 @@
+[
+  {
+    "id": "operating_margin",
+    "label": "Operating Margin",
+    "api": "/api/kpis/operating-margin",
+    "unit": "%",
+    "calculation": "(Operating Income / Revenue) * 100",
+    "shortDescription": "Profitability ratio after operating expenses.",
+    "description": "Shows how much profit a company makes after covering operating expenses, excluding taxes and interest.",
+    "businessQuestions": [
+      {
+        "question": "Is profitability improving over time?",
+        "description": "Tracks margin trends."
+      },
+      {
+        "question": "Are expenses scaling faster than revenue?",
+        "description": "Evaluates cost control efficiency."
+      }
+    ],
+    "visualsAvailable": ["line", "bar"],
+    "affiliateApplicability": ["finance"],
+    "displayIcon": "mdi:chart-areaspline",
+    "dataPoints": [
+      { "x": "Q1", "y": 18 },
+      { "x": "Q2", "y": 20 },
+      { "x": "Q3", "y": 22 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["profitability", "finance"],
+    "type": "finance",
+    "users": 9800
+  },
+  {
+    "id": "revenue_per_employee",
+    "label": "Revenue per Employee",
+    "api": "/api/kpis/revenue-per-employee",
+    "unit": "$",
+    "calculation": "Total revenue divided by total number of employees.",
+    "shortDescription": "Revenue generated per employee.",
+    "description": "Measures workforce efficiency by evaluating how much revenue each employee contributes.",
+    "businessQuestions": [
+      {
+        "question": "Is workforce efficiency improving?",
+        "description": "Tracks productivity relative to team size."
+      },
+      {
+        "question": "How do we compare to industry benchmarks?",
+        "description": "Helps assess competitiveness."
+      }
+    ],
+    "visualsAvailable": ["bar", "line"],
+    "affiliateApplicability": ["finance", "hr"],
+    "displayIcon": "mdi:account-cash-outline",
+    "dataPoints": [
+      { "x": "2023", "y": 82000 },
+      { "x": "2024", "y": 87000 },
+      { "x": "2025", "y": 91000 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["revenue", "efficiency", "workforce"],
+    "type": "efficiency",
+    "users": 12000
+  },
+
+  {
+    "id": "gross_margin",
+    "label": "Gross Margin",
+    "api": "/api/kpis/gross-margin",
+    "unit": "%",
+    "calculation": "((Revenue - COGS) / Revenue) * 100",
+    "shortDescription": "Profit after cost of goods sold.",
+    "description": "Indicates financial health by showing how much revenue remains after covering direct costs.",
+    "businessQuestions": [
+      {
+        "question": "Are we maintaining healthy margins?",
+        "description": "Measures pricing and cost control."
+      },
+      {
+        "question": "Which products have higher margins?",
+        "description": "Helps prioritize focus."
+      }
+    ],
+    "visualsAvailable": ["bar", "line"],
+    "affiliateApplicability": ["finance", "sales"],
+    "displayIcon": "mdi:finance",
+    "dataPoints": [
+      { "x": "2023", "y": 55 },
+      { "x": "2024", "y": 58 },
+      { "x": "2025", "y": 60 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["margin", "finance", "sales"],
+    "type": "finance",
+    "users": 13400
+  },
+  {
+    "id": "customer_acquisition_cost",
+    "label": "Customer Acquisition Cost",
+    "api": "/api/kpis/cac",
+    "unit": "$",
+    "calculation": "Total marketing and sales spend divided by number of new customers acquired.",
+    "shortDescription": "Average cost of acquiring a customer.",
+    "description": "Shows efficiency of marketing and sales investments in bringing new customers.",
+    "businessQuestions": [
+      {
+        "question": "Is CAC decreasing over time?",
+        "description": "Shows marketing efficiency."
+      },
+      {
+        "question": "Which channels have lowest CAC?",
+        "description": "Helps allocate budget effectively."
+      }
+    ],
+    "visualsAvailable": ["bar", "line"],
+    "affiliateApplicability": ["marketing", "sales"],
+    "displayIcon": "mdi:cash",
+    "dataPoints": [
+      { "x": "Q1", "y": 120 },
+      { "x": "Q2", "y": 110 },
+      { "x": "Q3", "y": 105 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["acquisition", "marketing", "sales"],
+    "type": "customer",
+    "users": 15000
+  },
+  {
+    "id": "customer_support_tickets",
+    "label": "Customer Support Tickets",
+    "api": "/api/kpis/support-tickets",
+    "unit": "count",
+    "calculation": "Number of tickets created in support system.",
+    "shortDescription": "Tracks support request volume.",
+    "description": "Measures how many issues are being reported, reflecting product stability and customer experience.",
+    "businessQuestions": [
+      {
+        "question": "Are tickets increasing post-release?",
+        "description": "Identifies product quality issues."
+      },
+      {
+        "question": "Which categories generate most tickets?",
+        "description": "Helps prioritize fixes."
+      }
+    ],
+    "visualsAvailable": ["bar", "line"],
+    "affiliateApplicability": ["support", "product"],
+    "displayIcon": "mdi:lifebuoy",
+    "dataPoints": [
+      { "x": "Week 1", "y": 230 },
+      { "x": "Week 2", "y": 210 },
+      { "x": "Week 3", "y": 195 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["support", "tickets", "customers"],
+    "type": "support",
+    "users": 7400
+  },
+  {
+    "id": "first_response_time",
+    "label": "First Response Time",
+    "api": "/api/kpis/first-response-time",
+    "unit": "minutes",
+    "calculation": "Average time between ticket creation and first agent response.",
+    "shortDescription": "How quickly support responds initially.",
+    "description": "Critical for customer satisfaction; faster responses indicate better support quality.",
+    "businessQuestions": [
+      {
+        "question": "Is support response time improving?",
+        "description": "Tracks support efficiency."
+      },
+      {
+        "question": "Which regions wait longer?",
+        "description": "Helps optimize staffing."
+      }
+    ],
+    "visualsAvailable": ["line", "bar"],
+    "affiliateApplicability": ["support"],
+    "displayIcon": "mdi:message-reply",
+    "dataPoints": [
+      { "x": "Week 1", "y": 20 },
+      { "x": "Week 2", "y": 18 },
+      { "x": "Week 3", "y": 15 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["support", "response", "tickets"],
+    "type": "support",
+    "users": 6800
+  },
+  {
+    "id": "employee_turnover_rate",
+    "label": "Employee Turnover Rate",
+    "api": "/api/kpis/employee-turnover",
+    "unit": "%",
+    "calculation": "(Employees who left / Total employees) * 100",
+    "shortDescription": "Tracks workforce attrition.",
+    "description": "High turnover can indicate dissatisfaction, poor culture, or competitive challenges.",
+    "businessQuestions": [
+      {
+        "question": "Is turnover rising in specific teams?",
+        "description": "Helps HR address retention issues."
+      },
+      {
+        "question": "How does our turnover compare to industry?",
+        "description": "Benchmarks HR effectiveness."
+      }
+    ],
+    "visualsAvailable": ["bar", "line"],
+    "affiliateApplicability": ["hr"],
+    "displayIcon": "mdi:account-off-outline",
+    "dataPoints": [
+      { "x": "2023", "y": 12 },
+      { "x": "2024", "y": 10 },
+      { "x": "2025", "y": 14 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["hr", "turnover", "employees"],
+    "type": "hr",
+    "users": 5600
+  },
+  {
+    "id": "employee_satisfaction",
+    "label": "Employee Satisfaction Score",
+    "api": "/api/kpis/employee-satisfaction",
+    "unit": "score",
+    "calculation": "Average employee survey rating (1–10).",
+    "shortDescription": "Measures employee happiness.",
+    "description": "Employee sentiment metric indicating workplace satisfaction and engagement.",
+    "businessQuestions": [
+      {
+        "question": "Are employees satisfied overall?",
+        "description": "Tracks morale and culture."
+      },
+      {
+        "question": "Does satisfaction differ by department?",
+        "description": "Highlights engagement gaps."
+      }
+    ],
+    "visualsAvailable": ["line", "bar"],
+    "affiliateApplicability": ["hr"],
+    "displayIcon": "mdi:emoticon-happy",
+    "dataPoints": [
+      { "x": "Q1", "y": 7.5 },
+      { "x": "Q2", "y": 7.8 },
+      { "x": "Q3", "y": 7.4 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["employee", "satisfaction", "hr"],
+    "type": "hr",
+    "users": 4300
+  },
+  {
+    "id": "release_frequency",
+    "label": "Release Frequency",
+    "api": "/api/kpis/release-frequency",
+    "unit": "count",
+    "calculation": "Number of product releases per time period.",
+    "shortDescription": "How often updates go live.",
+    "description": "Tracks agility and delivery speed of product and engineering teams.",
+    "businessQuestions": [
+      {
+        "question": "Are we releasing faster over time?",
+        "description": "Measures engineering agility."
+      },
+      {
+        "question": "Do frequent releases impact stability?",
+        "description": "Helps balance speed and quality."
+      }
+    ],
+    "visualsAvailable": ["bar", "line"],
+    "affiliateApplicability": ["engineering", "product"],
+    "displayIcon": "mdi:rocket-launch",
+    "dataPoints": [
+      { "x": "Jan", "y": 3 },
+      { "x": "Feb", "y": 4 },
+      { "x": "Mar", "y": 5 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["releases", "engineering", "product"],
+    "type": "performance",
+    "users": 5200
+  },
+  {
+    "id": "deployment_failure_rate",
+    "label": "Deployment Failure Rate",
+    "api": "/api/kpis/deployment-failure",
+    "unit": "%",
+    "calculation": "(Failed deployments / Total deployments) * 100",
+    "shortDescription": "Measures stability of software deployments.",
+    "description": "Indicates software reliability and CI/CD quality.",
+    "businessQuestions": [
+      {
+        "question": "Are failures reducing after automation?",
+        "description": "Evaluates CI/CD efficiency."
+      },
+      {
+        "question": "Which teams face highest failure rates?",
+        "description": "Identifies process gaps."
+      }
+    ],
+    "visualsAvailable": ["bar", "line"],
+    "affiliateApplicability": ["engineering"],
+    "displayIcon": "mdi:alert-circle-outline",
+    "dataPoints": [
+      { "x": "Week 1", "y": 12 },
+      { "x": "Week 2", "y": 10 },
+      { "x": "Week 3", "y": 8 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["deployment", "ci/cd", "engineering"],
+    "type": "performance",
+    "users": 6100
+  },
+  {
+    "id": "server_uptime",
+    "label": "Server Uptime",
+    "api": "/api/kpis/server-uptime",
+    "unit": "%",
+    "calculation": "(Total uptime / Total time) * 100",
+    "shortDescription": "Percentage of time servers are operational.",
+    "description": "Measures reliability of infrastructure availability.",
+    "businessQuestions": [
+      {
+        "question": "Are we meeting SLA uptime?",
+        "description": "Tracks service reliability."
+      },
+      {
+        "question": "Which regions face downtime?",
+        "description": "Guides infrastructure improvements."
+      }
+    ],
+    "visualsAvailable": ["line", "bar"],
+    "affiliateApplicability": ["engineering", "it"],
+    "displayIcon": "mdi:server",
+    "dataPoints": [
+      { "x": "Week 1", "y": 99.7 },
+      { "x": "Week 2", "y": 99.9 },
+      { "x": "Week 3", "y": 99.8 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["uptime", "server", "reliability"],
+    "type": "performance",
+    "users": 7700
+  },
+  {
+    "id": "support_csat",
+    "label": "Support CSAT",
+    "api": "/api/kpis/support-csat",
+    "unit": "score",
+    "calculation": "Average satisfaction score from post-ticket surveys.",
+    "shortDescription": "Customer satisfaction after support interactions.",
+    "description": "Direct feedback from users after engaging with support teams.",
+    "businessQuestions": [
+      {
+        "question": "Are users satisfied with support?",
+        "description": "Shows service quality perception."
+      },
+      {
+        "question": "Which agents score higher?",
+        "description": "Identifies top performers."
+      }
+    ],
+    "visualsAvailable": ["bar", "line"],
+    "affiliateApplicability": ["support"],
+    "displayIcon": "mdi:thumb-up-outline",
+    "dataPoints": [
+      { "x": "Q1", "y": 7.8 },
+      { "x": "Q2", "y": 8.1 },
+      { "x": "Q3", "y": 8.3 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["support", "satisfaction", "csat"],
+    "type": "support",
+    "users": 3900
+  },
+  {
+    "id": "mobile_app_crash_rate",
+    "label": "Mobile App Crash Rate",
+    "api": "/api/kpis/mobile-crash-rate",
+    "unit": "%",
+    "calculation": "(App crashes / Sessions) * 100",
+    "shortDescription": "Percentage of sessions ending in crashes.",
+    "description": "Measures stability of mobile applications.",
+    "businessQuestions": [
+      {
+        "question": "Which OS versions crash most?",
+        "description": "Guides prioritization of fixes."
+      },
+      {
+        "question": "Has crash rate decreased post-release?",
+        "description": "Tracks quality of updates."
+      }
+    ],
+    "visualsAvailable": ["line", "bar"],
+    "affiliateApplicability": ["product", "engineering"],
+    "displayIcon": "mdi:cellphone-off",
+    "dataPoints": [
+      { "x": "Jan", "y": 2.5 },
+      { "x": "Feb", "y": 2.1 },
+      { "x": "Mar", "y": 1.8 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["mobile", "crash", "stability"],
+    "type": "product",
+    "users": 6400
+  },
+  {
+    "id": "api_latency",
+    "label": "API Latency",
+    "api": "/api/kpis/api-latency",
+    "unit": "ms",
+    "calculation": "Average time taken by APIs to respond.",
+    "shortDescription": "Measures API performance.",
+    "description": "Helps track backend speed and user experience impact.",
+    "businessQuestions": [
+      {
+        "question": "Are APIs responding within SLA?",
+        "description": "Measures performance guarantees."
+      },
+      {
+        "question": "Which endpoints are slowest?",
+        "description": "Helps optimize backend."
+      }
+    ],
+    "visualsAvailable": ["line", "bar"],
+    "affiliateApplicability": ["engineering", "it"],
+    "displayIcon": "mdi:api",
+    "dataPoints": [
+      { "x": "Week 1", "y": 250 },
+      { "x": "Week 2", "y": 220 },
+      { "x": "Week 3", "y": 210 }
+    ],
+    "lastUpdated": "2025-07-27T00:00:00",
+    "tags": ["api", "latency", "performance"],
+    "type": "performance",
+    "users": 8500
+  }
+]

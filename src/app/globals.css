@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@plugin 'tailwind-scrollbar';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans);
+}
+
+@theme {
+  --color-midnight: #0b0a57;
+  --color-tahiti: #2eb7bf;
+  --color-bermuda: #46c2ab;
+}
