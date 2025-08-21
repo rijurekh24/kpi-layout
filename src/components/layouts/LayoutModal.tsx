@@ -82,7 +82,6 @@ const LayoutModal = ({ isOpen, onClose, layout }: LayoutModalProps) => {
       },
       yaxis: {
         labels: { style: { colors: "#666", fontSize: "11px" } },
-        title: { text: kpi.unit, style: { color: "#666" } },
       },
       grid: { borderColor: "#e5e7eb", strokeDashArray: 2 },
       tooltip: { theme: "light" },
