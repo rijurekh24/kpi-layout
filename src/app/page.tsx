@@ -5,6 +5,7 @@ import FeaturesBuilder from "@/components/featured/FeaturesBuilder";
 import KPIBuilder from "@/components/kpis/KPIBuilder";
 import LayoutBuilder from "@/components/layouts/LayoutBuilder";
 import { useEffect, useMemo, useState } from "react";
+import StoryboardBuilder from "@/components/storyboards/StoryboardBuilder";
 
 const fetchFeatured = async () => {
   const response = await fetch("/api/store/featured");
@@ -33,12 +34,23 @@ const fetchLayouts = async (searchTerm?: string) => {
   return response.json();
 };
 
+const fetchStoryboards = async (searchTerm?: string) => {
+  const response = await fetch(
+    "/api/store/storyboards" + (searchTerm ? `?searchString=${searchTerm}` : "")
+  );
+  if (!response.ok) {
+    throw new Error("Failed to fetch Storyboards");
+  }
+  return response.json();
+};
+
 function Page() {
   const [curTab, setCurTab] = useState<string>("Featured");
 
   const [featured, setFeatured] = useState<any>(null);
   const [kpis, setKpis] = useState<any[]>([]);
   const [layouts, setLayouts] = useState<any[]>([]);
+  const [storyboards, setStoryboards] = useState<any[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [showSearchHistoryPanel, setShowSearchHistoryPanel] = useState(false);
 
@@ -47,13 +59,15 @@ function Page() {
   const fetchData = async (searchTerm?: string) => {
     setLoading(true);
     try {
-      const [kpiData, layoutData, featuredData] = await Promise.all([
+      const [kpiData, layoutData, storyboardData, featuredData] = await Promise.all([
         fetchKPIs(searchTerm),
         fetchLayouts(searchTerm),
+        fetchStoryboards(searchTerm),
         fetchFeatured(),
       ]);
       setKpis(kpiData);
       setLayouts(layoutData);
+      setStoryboards(storyboardData);
       setFeatured(featuredData);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -104,16 +118,23 @@ function Page() {
     switch (curTab) {
       case "Featured":
         return (
-          <FeaturesBuilder features={featured} kpis={kpis} layouts={layouts} />
+          <FeaturesBuilder
+            features={featured}
+            kpis={kpis}
+            layouts={layouts}
+            storyboards={storyboards}
+          />
         );
       case "KPI":
         return <KPIBuilder kpis={kpis} />;
       case "Layouts":
         return <LayoutBuilder layouts={layouts} />;
+      case "Storyboards":
+        return <StoryboardBuilder storyboards={storyboards} />;
       default:
         return null;
     }
-  }, [curTab, loading, kpis]);
+  }, [curTab, loading, kpis, layouts, storyboards, featured]);
 
   return (
     <div
@@ -126,7 +147,7 @@ function Page() {
       </h2>
 
       <Searchbar
-        placeholder="Search KPIs, layouts, or features..."
+        placeholder="Search KPIs, layouts, storyboards, or features..."
         className="mt-8 w-[min(90vw,45rem)]"
         onchange={(val) => setSearchTerm(val)}
         value={searchTerm}
@@ -139,7 +160,7 @@ function Page() {
         curTab={curTab}
         onChange={setCurTab}
         className="mt-6 w-[min(90vw,35rem)]"
-        items={["Featured", "KPI", "Layouts"]}
+        items={["Featured", "KPI", "Layouts", "Storyboards"]}
       />
 
       <div className="mt-6 w-[90vw] md:w-[70vw] flex-1  px-3 scrollbar-thin">

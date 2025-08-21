@@ -1,0 +1,71 @@
+[
+  {
+    "id": "q3_board_review",
+    "title": "Q3 Board Review",
+    "description": "Executive storyboard combining key KPIs and layouts for Q3.",
+    "kpisUsed": [
+      "operating_margin",
+      "gross_margin",
+      "customer_support_tickets"
+    ],
+    "layoutsUsed": ["finance_dashboard", "product_quality_dashboard"],
+    "affiliateApplicability": ["executive", "finance", "product"],
+    "lastUpdated": "2025-08-20T11:00:00.000Z",
+    "users": 540,
+    "businessQuestions": [
+      {
+        "question": "What drove profitability changes in Q3?",
+        "description": "Synthesize margin and cost signals across units."
+      },
+      {
+        "question": "How did product stability affect support volume?",
+        "description": "Correlate crash rates with ticket trends and CSAT."
+      }
+    ],
+    "slides": [
+      {
+        "title": "Profitability Overview",
+        "notes": "Margins trending upward post cost optimization.",
+        "elements": [
+          { "type": "kpi", "id": "operating_margin" },
+          { "type": "kpi", "id": "gross_margin" }
+        ]
+      },
+      {
+        "title": "Quality and Support",
+        "notes": "Crash reduction linked to fewer tickets and higher CSAT.",
+        "elements": [
+          { "type": "kpi", "id": "customer_support_tickets" },
+          { "type": "layout", "id": "product_quality_dashboard" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sales_kickoff_story",
+    "title": "Sales Kickoff Story",
+    "description": "Narrative deck for GTM planning and revenue efficiency.",
+    "kpisUsed": ["revenue_per_employee", "customer_acquisition_cost"],
+    "layoutsUsed": ["customer_success_dashboard"],
+    "affiliateApplicability": ["sales", "gtm"],
+    "lastUpdated": "2025-08-19T10:30:00.000Z",
+    "users": 310,
+    "businessQuestions": [
+      {
+        "question": "Are we scaling revenue efficiently?",
+        "description": "Track revenue per headcount versus CAC."
+      }
+    ],
+    "slides": [
+      {
+        "title": "Efficiency Snapshot",
+        "notes": "RPE up 6% QoQ; CAC slightly elevated due to campaigns.",
+        "elements": [
+          { "type": "kpi", "id": "revenue_per_employee" },
+          { "type": "kpi", "id": "customer_acquisition_cost" }
+        ]
+      }
+    ]
+  }
+]
+

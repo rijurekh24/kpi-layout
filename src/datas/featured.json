@@ -10,5 +10,9 @@
     "finance_dashboard",
     "customer_success_dashboard",
     "workforce_dashboard"
+  ],
+  "stories": [
+    "q3_board_review",
+    "sales_kickoff_story"
   ]
 }
