@@ -126,7 +126,7 @@ function Page() {
       </h2>
 
       <Searchbar
-        placeholder="Type to Search"
+        placeholder="Search KPIs, layouts, or features..."
         className="mt-8 w-[min(90vw,45rem)]"
         onchange={(val) => setSearchTerm(val)}
         value={searchTerm}

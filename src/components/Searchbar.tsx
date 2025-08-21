@@ -69,22 +69,22 @@ const Searchbar = ({
   return (
     <div
       className={clsx(
-        "flex gap-1 items-center px-3",
-        "bg-white rounded-3xl shadow-sm transition-shadow",
-        "focus-within:shadow-md",
-        "relative",
+        "flex gap-3 items-center px-4 py-1",
+        "bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm transition-all duration-200",
+        "focus-within:shadow-xl focus-within:bg-white/90 focus-within:scale-[1.02]",
+        "relative z-20",
         className,
         showSearchHistoryPanel && "rounded-b-none"
       )}
     >
-      <MagnifyingGlassIcon className="text-gray-400" size={22} />
+      <MagnifyingGlassIcon className="text-gray-400 flex-shrink-0" size={20} />
       <input
         type="text"
         placeholder={placeholder}
         onFocus={() => setShowSearchHistoryPanel?.(true)}
         onBlur={() => setTimeout(() => setShowSearchHistoryPanel?.(false), 100)}
         className={clsx(
-          "w-full p-2 bg-transparent focus:outline-none",
+          "w-full py-3 bg-transparent focus:outline-none placeholder:text-gray-400",
           inputClass
         )}
         autoComplete="off"

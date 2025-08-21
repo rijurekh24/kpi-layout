@@ -1,9 +1,13 @@
 "use client";
 
 import { Icon, loadIcon } from "@iconify/react/dist/iconify.js";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Modal from "../Dialog";
 import { Layout } from "./LayoutBuilder";
+import { KPI } from "../kpis/KPIBuilder";
+import dynamic from "next/dynamic";
+
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 interface LayoutModalProps {
   isOpen: boolean;
@@ -17,7 +21,150 @@ const LayoutModal = ({ isOpen, onClose, layout }: LayoutModalProps) => {
   }, [isOpen]);
 
   const [fav, setFav] = useState(false);
+  const [showLayoutView, setShowLayoutView] = useState(false);
+  const [kpisData, setKpisData] = useState<KPI[]>([]);
+  const [loadingKpis, setLoadingKpis] = useState(false);
 
+  const fetchKpiData = useCallback(async () => {
+    if (!layout.kpisUsed.length) return;
+
+    setLoadingKpis(true);
+    try {
+      const kpiPromises = layout.kpisUsed.map(async (kpiId) => {
+        const response = await fetch(`/api/store/kpis/${kpiId}`);
+        if (response.ok) {
+          return response.json();
+        }
+        return null;
+      });
+
+      const results = await Promise.all(kpiPromises);
+      const validKpis = results.filter(Boolean);
+      setKpisData(validKpis);
+    } catch (error) {
+      console.error("Error fetching KPI data:", error);
+    } finally {
+      setLoadingKpis(false);
+    }
+  }, [layout.kpisUsed]);
+
+  useEffect(() => {
+    if (showLayoutView) {
+      fetchKpiData();
+    }
+  }, [showLayoutView, fetchKpiData]);
+
+  const renderKpiChart = (kpi: KPI) => {
+    if (!kpi.dataPoints?.length) return null;
+
+    const categories = kpi.dataPoints.map((dp) => dp.x);
+    const series = [
+      { name: kpi.label, data: kpi.dataPoints.map((dp) => dp.y) },
+    ];
+
+    const options: ApexCharts.ApexOptions = {
+      chart: {
+        type: "line",
+        toolbar: { show: false },
+        fontFamily: "inherit",
+        height: 200,
+      },
+      stroke: { curve: "smooth", width: 2, colors: ["#3b82f6"] },
+      markers: {
+        size: 3,
+        colors: ["#fff"],
+        strokeColors: "#3b82f6",
+        strokeWidth: 2,
+      },
+      xaxis: {
+        categories,
+        labels: { style: { colors: "#666", fontSize: "11px" } },
+      },
+      yaxis: {
+        labels: { style: { colors: "#666", fontSize: "11px" } },
+        title: { text: kpi.unit, style: { color: "#666" } },
+      },
+      grid: { borderColor: "#e5e7eb", strokeDashArray: 2 },
+      tooltip: { theme: "light" },
+      colors: ["#3b82f6"],
+      title: {
+        text: kpi.label,
+        align: "left",
+        style: { fontSize: "14px", fontWeight: "600", color: "#374151" },
+      },
+    };
+
+    return (
+      <div className="bg-white rounded-lg border p-4">
+        <Chart type="line" options={options} series={series} height={200} />
+        <p className="text-xs text-gray-500 mt-2">{kpi.shortDescription}</p>
+      </div>
+    );
+  };
+
+  if (showLayoutView) {
+    return (
+      <Modal isOpen={isOpen} onClose={onClose} width="max-w-6xl">
+        <div className="p-6 space-y-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setShowLayoutView(false)}
+                className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition"
+              >
+                <Icon icon="mdi:arrow-left" fontSize={20} />
+                <span className="text-sm font-medium">Back to Details</span>
+              </button>
+            </div>
+            <h2 className="text-xl font-bold text-gray-900">
+              {layout.layout} - Layout View
+            </h2>
+          </div>
+
+          {loadingKpis ? (
+            <div className="flex items-center justify-center h-64">
+              <p className="text-gray-500">Loading KPI data...</p>
+            </div>
+          ) : (
+            <div className="space-y-6">
+              {layout.pages.map((page, pageIndex) => (
+                <div key={pageIndex} className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-800 border-b pb-2">
+                    {page.title}
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {page.elements.map((element, elementIndex) => {
+                      const kpiData = kpisData.find(
+                        (kpi) => kpi.id === element.kpiId
+                      );
+                      return (
+                        <div
+                          key={elementIndex}
+                          className={`${
+                            element.columns <= 6 ? "col-span-1" : "col-span-2"
+                          }`}
+                        >
+                          {kpiData ? (
+                            renderKpiChart(kpiData)
+                          ) : (
+                            <div className="bg-gray-100 rounded-lg border p-4 h-48 flex items-center justify-center">
+                              <p className="text-gray-500">
+                                No data available for {element.title}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </Modal>
+    );
+  }
   return (
     <Modal isOpen={isOpen} onClose={onClose} width="max-w-4xl">
       <div className="p-6 space-y-6">
@@ -95,8 +242,15 @@ const LayoutModal = ({ isOpen, onClose, layout }: LayoutModalProps) => {
 
         <div className="flex flex-col gap-2">
           <button
+            onClick={() => setShowLayoutView(true)}
+            className="p-2 flex items-center justify-center gap-2 border rounded-md text-sm bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-semibold hover:opacity-90 transition"
+          >
+            <Icon icon="mdi:eye-outline" fontSize={20} />
+            View Layout
+          </button>
+          <button
             onClick={() => setFav((prev) => !prev)}
-            className="p-2 flex items-center justify-center gap-2 border rounded-md text-sm  bg-gradient-to-br from-blue-500 to-indigo-600 text-white font-semibold hover:bg-gray-100 active:bg-gray-200 transition"
+            className="p-2 flex items-center justify-center gap-2 border rounded-md text-sm bg-white text-gray-700 font-semibold hover:bg-gray-50 active:bg-gray-100 transition"
           >
             <Icon
               icon={

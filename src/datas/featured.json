@@ -7,8 +7,8 @@
   ],
 
   "layout": [
-    "net_promoter_score_dashboard",
-    "customer_lifetime_value_dashboard",
-    "average_order_value_dashboard"
+    "finance_dashboard",
+    "customer_success_dashboard",
+    "workforce_dashboard"
   ]
 }

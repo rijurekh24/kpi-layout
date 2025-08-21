@@ -1,35 +1,28 @@
 [
   {
-    "id": "revenue_growth_dashboard",
-    "layout": "Revenue Growth Dashboard",
-    "description": "Monitors month-over-month changes in company revenue.",
-    "kpisUsed": ["revenue_growth", "operating_margin", "gross_margin"],
+    "id": "finance_dashboard",
+    "layout": "Finance Dashboard",
+    "description": "Monitors profitability and cost efficiency trends.",
+    "kpisUsed": [
+      "operating_margin",
+      "gross_margin",
+      "customer_acquisition_cost",
+      "revenue_per_employee"
+    ],
     "lastUpdated": "2025-08-20T09:00:00.000Z",
     "users": 1200,
     "type": "Finance",
     "businessQuestions": [
       {
-        "question": "How fast is revenue growing?",
-        "description": "Identify month-over-month growth trends."
+        "question": "How are margins trending?",
+        "description": "Identify gross and operating margin changes over time."
       },
       {
-        "question": "Are there periods of slowdown?",
-        "description": "Spot declining revenue growth months."
+        "question": "Are we controlling acquisition costs?",
+        "description": "Evaluate CAC relative to margins."
       }
     ],
     "pages": [
-      {
-        "title": "Revenue Trends",
-        "totalColumns": 12,
-        "elements": [
-          {
-            "kpiId": "revenue_growth",
-            "columns": 12,
-            "title": "Revenue Growth",
-            "additionalText": "Track revenue fluctuations over time."
-          }
-        ]
-      },
       {
         "title": "Profitability Metrics",
         "totalColumns": 12,
@@ -47,162 +40,36 @@
             "additionalText": "Revenue left after COGS."
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "average_order_value_dashboard",
-    "layout": "Average Order Value Dashboard",
-    "description": "Tracks average spend per order to evaluate customer purchasing behavior.",
-    "kpisUsed": ["average_order_value", "customer_acquisition_cost"],
-    "lastUpdated": "2025-08-20T09:10:00.000Z",
-    "users": 980,
-    "type": "Sales",
-    "businessQuestions": [
-      {
-        "question": "What is the average customer spend?",
-        "description": "Monitor per-transaction revenue levels."
       },
       {
-        "question": "Is AOV increasing over time?",
-        "description": "Track if upselling and bundling efforts are effective."
-      }
-    ],
-    "pages": [
-      {
-        "title": "Order Value Insights",
-        "totalColumns": 12,
-        "elements": [
-          {
-            "kpiId": "average_order_value",
-            "columns": 12,
-            "title": "Average Order Value",
-            "additionalText": "Analyze changes in customer spend."
-          }
-        ]
-      },
-      {
-        "title": "Acquisition Efficiency",
+        "title": "Efficiency Metrics",
         "totalColumns": 12,
         "elements": [
           {
             "kpiId": "customer_acquisition_cost",
-            "columns": 12,
-            "title": "Customer Acquisition Cost",
-            "additionalText": "Marketing and sales efficiency in acquiring customers."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "customer_lifetime_value_dashboard",
-    "layout": "Customer Lifetime Value Dashboard",
-    "description": "Analyzes the long-term revenue potential of customers.",
-    "kpisUsed": ["customer_lifetime_value", "revenue_per_employee"],
-    "lastUpdated": "2025-08-20T09:20:00.000Z",
-    "users": 860,
-    "type": "Customer Success",
-    "businessQuestions": [
-      {
-        "question": "What is the average customer lifetime value?",
-        "description": "Evaluate profitability of customer relationships."
-      },
-      {
-        "question": "Are CLV levels improving?",
-        "description": "Track if retention and upselling increase customer value."
-      }
-    ],
-    "pages": [
-      {
-        "title": "Customer Value Metrics",
-        "totalColumns": 12,
-        "elements": [
-          {
-            "kpiId": "customer_lifetime_value",
-            "columns": 12,
-            "title": "Customer Lifetime Value",
-            "additionalText": "Long-term revenue from customers."
-          }
-        ]
-      },
-      {
-        "title": "Workforce Productivity",
-        "totalColumns": 12,
-        "elements": [
-          {
-            "kpiId": "revenue_per_employee",
-            "columns": 12,
-            "title": "Revenue per Employee",
-            "additionalText": "Workforce efficiency impact on CLV."
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "user_retention_dashboard",
-    "layout": "User Retention Dashboard",
-    "description": "Tracks how effectively the company retains its users over time.",
-    "kpisUsed": [
-      "user_retention",
-      "customer_support_tickets",
-      "first_response_time"
-    ],
-    "lastUpdated": "2025-08-20T09:30:00.000Z",
-    "users": 1450,
-    "type": "Engagement",
-    "businessQuestions": [
-      {
-        "question": "Are we retaining users effectively?",
-        "description": "Measure loyalty and repeat usage."
-      },
-      {
-        "question": "Which cohorts retain better?",
-        "description": "Compare retention by signup date or channel."
-      }
-    ],
-    "pages": [
-      {
-        "title": "Retention Insights",
-        "totalColumns": 12,
-        "elements": [
-          {
-            "kpiId": "user_retention",
-            "columns": 12,
-            "title": "User Retention",
-            "additionalText": "Retention rates across cohorts."
-          }
-        ]
-      },
-      {
-        "title": "Support Impact on Retention",
-        "totalColumns": 12,
-        "elements": [
-          {
-            "kpiId": "customer_support_tickets",
             "columns": 6,
-            "title": "Support Tickets",
-            "additionalText": "Track product stability issues."
+            "title": "Customer Acquisition Cost",
+            "additionalText": "Marketing efficiency in acquiring customers."
           },
           {
-            "kpiId": "first_response_time",
+            "kpiId": "revenue_per_employee",
             "columns": 6,
-            "title": "First Response Time",
-            "additionalText": "Support responsiveness effect on retention."
+            "title": "Revenue per Employee",
+            "additionalText": "Revenue contribution per employee."
           }
         ]
       }
     ]
   },
   {
-    "id": "customer_satisfaction_score_dashboard",
-    "layout": "Customer Satisfaction Dashboard",
-    "description": "Measures customer satisfaction levels from surveys.",
+    "id": "customer_success_dashboard",
+    "layout": "Customer Success Dashboard",
+    "description": "Tracks customer experience and satisfaction trends.",
     "kpisUsed": [
-      "customer_satisfaction_score",
       "support_csat",
-      "employee_satisfaction"
+      "employee_satisfaction",
+      "customer_support_tickets",
+      "first_response_time"
     ],
     "lastUpdated": "2025-08-20T09:40:00.000Z",
     "users": 1120,
@@ -210,11 +77,11 @@
     "businessQuestions": [
       {
         "question": "How satisfied are customers?",
-        "description": "Track CSAT survey results over time."
+        "description": "Measure CSAT and support feedback."
       },
       {
-        "question": "Which areas drive satisfaction?",
-        "description": "Identify features or services influencing scores."
+        "question": "How does employee satisfaction impact customers?",
+        "description": "Link between workforce morale and CSAT."
       }
     ],
     "pages": [
@@ -223,79 +90,206 @@
         "totalColumns": 12,
         "elements": [
           {
-            "kpiId": "customer_satisfaction_score",
-            "columns": 12,
-            "title": "Customer Satisfaction",
-            "additionalText": "Survey-based satisfaction tracking."
-          }
-        ]
-      },
-      {
-        "title": "Support Satisfaction",
-        "totalColumns": 12,
-        "elements": [
-          {
             "kpiId": "support_csat",
-            "columns": 12,
+            "columns": 6,
             "title": "Support CSAT",
-            "additionalText": "Direct user feedback on support interactions."
-          }
-        ]
-      },
-      {
-        "title": "Employee Satisfaction Link",
-        "totalColumns": 12,
-        "elements": [
+            "additionalText": "Customer feedback post-support."
+          },
           {
             "kpiId": "employee_satisfaction",
-            "columns": 12,
+            "columns": 6,
             "title": "Employee Satisfaction",
-            "additionalText": "Employee morale’s impact on customer satisfaction."
+            "additionalText": "Workplace morale and engagement."
+          }
+        ]
+      },
+      {
+        "title": "Support Effectiveness",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "customer_support_tickets",
+            "columns": 6,
+            "title": "Support Tickets",
+            "additionalText": "Support request volume."
+          },
+          {
+            "kpiId": "first_response_time",
+            "columns": 6,
+            "title": "First Response Time",
+            "additionalText": "Responsiveness of support."
           }
         ]
       }
     ]
   },
   {
-    "id": "net_promoter_score_dashboard",
-    "layout": "Net Promoter Score Dashboard",
-    "description": "Tracks how likely customers are to recommend the company.",
-    "kpisUsed": ["net_promoter_score", "employee_turnover_rate"],
+    "id": "workforce_dashboard",
+    "layout": "Workforce Dashboard",
+    "description": "Analyzes employee satisfaction and retention trends.",
+    "kpisUsed": [
+      "employee_turnover_rate",
+      "employee_satisfaction",
+      "revenue_per_employee"
+    ],
     "lastUpdated": "2025-08-20T09:50:00.000Z",
     "users": 1010,
-    "type": "Customer Advocacy",
+    "type": "HR",
     "businessQuestions": [
       {
-        "question": "Do customers recommend us?",
-        "description": "Track likelihood of customer referrals."
+        "question": "How engaged and satisfied are employees?",
+        "description": "Track survey scores and morale trends."
       },
       {
-        "question": "Is NPS improving?",
-        "description": "Spot changes in promoter vs detractor balance."
+        "question": "Are turnover rates affecting productivity?",
+        "description": "Compare attrition with revenue per employee."
       }
     ],
     "pages": [
       {
-        "title": "NPS Insights",
+        "title": "Engagement & Morale",
         "totalColumns": 12,
         "elements": [
           {
-            "kpiId": "net_promoter_score",
-            "columns": 12,
-            "title": "Net Promoter Score",
-            "additionalText": "Likelihood of customer recommendations."
+            "kpiId": "employee_satisfaction",
+            "columns": 6,
+            "title": "Employee Satisfaction",
+            "additionalText": "Workforce sentiment over time."
+          },
+          {
+            "kpiId": "employee_turnover_rate",
+            "columns": 6,
+            "title": "Turnover Rate",
+            "additionalText": "Attrition trends and retention signals."
           }
         ]
       },
       {
-        "title": "Internal Factors",
+        "title": "Productivity Impact",
         "totalColumns": 12,
         "elements": [
           {
-            "kpiId": "employee_turnover_rate",
+            "kpiId": "revenue_per_employee",
             "columns": 12,
-            "title": "Employee Turnover Rate",
-            "additionalText": "Impact of workforce attrition on NPS."
+            "title": "Revenue per Employee",
+            "additionalText": "Impact of workforce efficiency."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "engineering_performance_dashboard",
+    "layout": "Engineering Performance Dashboard",
+    "description": "Monitors deployment quality, release speed, and infrastructure stability.",
+    "kpisUsed": [
+      "release_frequency",
+      "deployment_failure_rate",
+      "server_uptime",
+      "api_latency"
+    ],
+    "lastUpdated": "2025-08-20T10:00:00.000Z",
+    "users": 950,
+    "type": "Engineering",
+    "businessQuestions": [
+      {
+        "question": "Are we shipping faster without sacrificing stability?",
+        "description": "Track release frequency and failure rates."
+      },
+      {
+        "question": "Are APIs and servers meeting SLA targets?",
+        "description": "Monitor backend performance and uptime."
+      }
+    ],
+    "pages": [
+      {
+        "title": "Deployment & Release Metrics",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "release_frequency",
+            "columns": 6,
+            "title": "Release Frequency",
+            "additionalText": "Number of deployments per month."
+          },
+          {
+            "kpiId": "deployment_failure_rate",
+            "columns": 6,
+            "title": "Deployment Failure Rate",
+            "additionalText": "Percentage of failed deployments."
+          }
+        ]
+      },
+      {
+        "title": "Infrastructure Health",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "server_uptime",
+            "columns": 6,
+            "title": "Server Uptime",
+            "additionalText": "System availability across regions."
+          },
+          {
+            "kpiId": "api_latency",
+            "columns": 6,
+            "title": "API Latency",
+            "additionalText": "Average API response times."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "product_quality_dashboard",
+    "layout": "Product Quality Dashboard",
+    "description": "Tracks stability and quality of customer-facing products.",
+    "kpisUsed": [
+      "mobile_app_crash_rate",
+      "customer_support_tickets",
+      "support_csat"
+    ],
+    "lastUpdated": "2025-08-20T10:10:00.000Z",
+    "users": 870,
+    "type": "Product",
+    "businessQuestions": [
+      {
+        "question": "Are product stability issues decreasing?",
+        "description": "Monitor crash rate and ticket volume."
+      },
+      {
+        "question": "Do stability improvements reflect in customer satisfaction?",
+        "description": "Correlate CSAT with crash and ticket trends."
+      }
+    ],
+    "pages": [
+      {
+        "title": "Stability Metrics",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "mobile_app_crash_rate",
+            "columns": 6,
+            "title": "Mobile App Crash Rate",
+            "additionalText": "Crashes per 100 sessions."
+          },
+          {
+            "kpiId": "customer_support_tickets",
+            "columns": 6,
+            "title": "Support Tickets",
+            "additionalText": "Reported product issues."
+          }
+        ]
+      },
+      {
+        "title": "Satisfaction Impact",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "support_csat",
+            "columns": 12,
+            "title": "Support CSAT",
+            "additionalText": "Customer satisfaction after issue resolution."
           }
         ]
       }
