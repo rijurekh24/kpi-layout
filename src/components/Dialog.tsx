@@ -55,7 +55,7 @@ export default function Modal({
               >
                 <div className="flex justify-end items-center gap-2">
                   <button
-                    onClick={() => showToast("Copied to Clipboard")}
+                    onClick={() => showToast("Copied")}
                     className="text-gray-400 hover:text-gray-800 active:text-gray-500 transition cursor-pointer"
                   >
                     <LinkSimpleIcon size={20} weight="bold" />

@@ -3,7 +3,7 @@
     "id": "revenue_growth_dashboard",
     "layout": "Revenue Growth Dashboard",
     "description": "Monitors month-over-month changes in company revenue.",
-    "kpisUsed": ["revenue_growth"],
+    "kpisUsed": ["revenue_growth", "operating_margin", "gross_margin"],
     "lastUpdated": "2025-08-20T09:00:00.000Z",
     "users": 1200,
     "type": "Finance",
@@ -29,6 +29,24 @@
             "additionalText": "Track revenue fluctuations over time."
           }
         ]
+      },
+      {
+        "title": "Profitability Metrics",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "operating_margin",
+            "columns": 6,
+            "title": "Operating Margin",
+            "additionalText": "Profitability ratio after operating expenses."
+          },
+          {
+            "kpiId": "gross_margin",
+            "columns": 6,
+            "title": "Gross Margin",
+            "additionalText": "Revenue left after COGS."
+          }
+        ]
       }
     ]
   },
@@ -36,7 +54,7 @@
     "id": "average_order_value_dashboard",
     "layout": "Average Order Value Dashboard",
     "description": "Tracks average spend per order to evaluate customer purchasing behavior.",
-    "kpisUsed": ["average_order_value"],
+    "kpisUsed": ["average_order_value", "customer_acquisition_cost"],
     "lastUpdated": "2025-08-20T09:10:00.000Z",
     "users": 980,
     "type": "Sales",
@@ -62,6 +80,18 @@
             "additionalText": "Analyze changes in customer spend."
           }
         ]
+      },
+      {
+        "title": "Acquisition Efficiency",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "customer_acquisition_cost",
+            "columns": 12,
+            "title": "Customer Acquisition Cost",
+            "additionalText": "Marketing and sales efficiency in acquiring customers."
+          }
+        ]
       }
     ]
   },
@@ -69,7 +99,7 @@
     "id": "customer_lifetime_value_dashboard",
     "layout": "Customer Lifetime Value Dashboard",
     "description": "Analyzes the long-term revenue potential of customers.",
-    "kpisUsed": ["customer_lifetime_value"],
+    "kpisUsed": ["customer_lifetime_value", "revenue_per_employee"],
     "lastUpdated": "2025-08-20T09:20:00.000Z",
     "users": 860,
     "type": "Customer Success",
@@ -95,6 +125,18 @@
             "additionalText": "Long-term revenue from customers."
           }
         ]
+      },
+      {
+        "title": "Workforce Productivity",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "revenue_per_employee",
+            "columns": 12,
+            "title": "Revenue per Employee",
+            "additionalText": "Workforce efficiency impact on CLV."
+          }
+        ]
       }
     ]
   },
@@ -102,7 +144,11 @@
     "id": "user_retention_dashboard",
     "layout": "User Retention Dashboard",
     "description": "Tracks how effectively the company retains its users over time.",
-    "kpisUsed": ["user_retention"],
+    "kpisUsed": [
+      "user_retention",
+      "customer_support_tickets",
+      "first_response_time"
+    ],
     "lastUpdated": "2025-08-20T09:30:00.000Z",
     "users": 1450,
     "type": "Engagement",
@@ -128,6 +174,24 @@
             "additionalText": "Retention rates across cohorts."
           }
         ]
+      },
+      {
+        "title": "Support Impact on Retention",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "customer_support_tickets",
+            "columns": 6,
+            "title": "Support Tickets",
+            "additionalText": "Track product stability issues."
+          },
+          {
+            "kpiId": "first_response_time",
+            "columns": 6,
+            "title": "First Response Time",
+            "additionalText": "Support responsiveness effect on retention."
+          }
+        ]
       }
     ]
   },
@@ -135,7 +199,11 @@
     "id": "customer_satisfaction_score_dashboard",
     "layout": "Customer Satisfaction Dashboard",
     "description": "Measures customer satisfaction levels from surveys.",
-    "kpisUsed": ["customer_satisfaction_score"],
+    "kpisUsed": [
+      "customer_satisfaction_score",
+      "support_csat",
+      "employee_satisfaction"
+    ],
     "lastUpdated": "2025-08-20T09:40:00.000Z",
     "users": 1120,
     "type": "Customer Success",
@@ -161,6 +229,30 @@
             "additionalText": "Survey-based satisfaction tracking."
           }
         ]
+      },
+      {
+        "title": "Support Satisfaction",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "support_csat",
+            "columns": 12,
+            "title": "Support CSAT",
+            "additionalText": "Direct user feedback on support interactions."
+          }
+        ]
+      },
+      {
+        "title": "Employee Satisfaction Link",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "employee_satisfaction",
+            "columns": 12,
+            "title": "Employee Satisfaction",
+            "additionalText": "Employee morale’s impact on customer satisfaction."
+          }
+        ]
       }
     ]
   },
@@ -168,7 +260,7 @@
     "id": "net_promoter_score_dashboard",
     "layout": "Net Promoter Score Dashboard",
     "description": "Tracks how likely customers are to recommend the company.",
-    "kpisUsed": ["net_promoter_score"],
+    "kpisUsed": ["net_promoter_score", "employee_turnover_rate"],
     "lastUpdated": "2025-08-20T09:50:00.000Z",
     "users": 1010,
     "type": "Customer Advocacy",
@@ -192,6 +284,18 @@
             "columns": 12,
             "title": "Net Promoter Score",
             "additionalText": "Likelihood of customer recommendations."
+          }
+        ]
+      },
+      {
+        "title": "Internal Factors",
+        "totalColumns": 12,
+        "elements": [
+          {
+            "kpiId": "employee_turnover_rate",
+            "columns": 12,
+            "title": "Employee Turnover Rate",
+            "additionalText": "Impact of workforce attrition on NPS."
           }
         ]
       }
